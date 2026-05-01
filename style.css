@@ -1,0 +1,355 @@
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #d4af37;
+    --accent-color: #e0c097;
+    --text-color: #333;
+    --light-text: #f4f4f4;
+    --bg-color: #ffffff;
+    --section-padding: 100px 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .logo {
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    transition: 0.3s;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    letter-spacing: 2px;
+}
+
+.logo span {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background: url('images/interior.jpg.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Fallback gradient only if background is not set elsewhere */
+#hero {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/interior.jpg.png') no-repeat center center/cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--light-text);
+}
+
+.hero-content h2 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Section Common */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title span {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.section-title h3 {
+    font-size: 32px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+/* Concept */
+#concept {
+    padding: var(--section-padding);
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.concept-text p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.concept-image img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 20px 20px 0 var(--accent-color);
+}
+
+/* Special */
+#special {
+    padding: var(--section-padding);
+    background: #f9f9f9;
+}
+
+.special-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.card h4 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Menu */
+#menu {
+    padding: var(--section-padding);
+}
+
+.menu-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.menu-item .name {
+    font-weight: 400;
+}
+
+.menu-item .price {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.menu-note {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #999;
+}
+
+/* Access */
+#access {
+    padding: var(--section-padding);
+}
+
+.access-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.access-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.access-info th, .access-info td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.access-info th {
+    width: 120px;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--light-text);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h2 {
+        font-size: 36px;
+    }
+    
+    .concept-grid, .access-grid, .special-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .concept-image img {
+        box-shadow: 10px 10px 0 var(--accent-color);
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
