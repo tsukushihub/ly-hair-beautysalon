@@ -420,7 +420,11 @@ footer p {
     }
     
     .container {
-        padding: 0 25px;
+        padding: 0 30px;
+    }
+
+    .menu-item {
+        padding: 15px 5px;
     }
 
     .concept-grid, .access-grid, .special-cards {
